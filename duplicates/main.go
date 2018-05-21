@@ -6,18 +6,18 @@ import "fmt"
 hasdups is a linear solution to look  for duplicate numbers
 within an array of integers. It is O(N) for time complexity and O(N)
 for space complexity. It has a limitation of only handling numbers less 1000,
-this is becuase I did not know how to create an array in Go with dynamic
+this is becuase I did not know how to create an slice in Go with dynamic
 capacity.
 */
-func hasDups(array []int) bool {
+func Dups(sliceOfNumbers []int) bool {
 	steps := 0
 	existingNumberMap := make([]int, 10, 1000)
 	var number int
 
-	for i := 0; i < len(array); i++ {
+	for i := 0; i < len(sliceOfNumbers); i++ {
 		steps++
 
-		number = array[i]
+		number = sliceOfNumbers[i]
 
 		if number > len(existingNumberMap) {
 			resize := number + 1
@@ -50,6 +50,6 @@ func main() {
 	fmt.Println("Given the array:")
 	fmt.Println(array)
 	fmt.Println("Find any duplicate numbers")
-	dups := hasDups(array)
+	dups := Dups(array)
 	fmt.Println("Array has duplication of values: ", dups)
 }
