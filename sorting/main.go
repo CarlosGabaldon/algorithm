@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sort"
+	"strings"
 )
 
 func SecondHighest(numbers []int) int {
@@ -16,4 +17,5 @@ func main() {
 	fmt.Println("Find the second highest number")
 	secondHighest := SecondHighest(numbers)
 	fmt.Println("Second highest number: ", secondHighest)
+	fmt.Println(strings.ToUpper("that was fun!"))
 }
